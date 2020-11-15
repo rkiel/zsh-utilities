@@ -1,0 +1,9 @@
+alias more='less -RX'
+alias sl='ls'
+alias lsl='ls -l'
+alias lsa='ls -la'
+
+$LOCALS=~/.zshrc_locals
+if [ -f $LOCALS ]; then
+  source $LOCALS
+fi

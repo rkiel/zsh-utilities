@@ -1,0 +1,8 @@
+REPO="~/GitHub/rkiel/zsh-utilities"
+FILE=~/.zprofile
+echo                                    >> $FILE
+echo "source ${REPO}/dotfiles/zprofile" >> $FILE
+
+FILE=~/.zshrc
+echo                                 >> $FILE
+echo "source ${REPO}/dotfiles/zshrc" >> $FILE
