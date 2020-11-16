@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+USERNAME = '%n'
+RELATIVE = '%1d'
+PROMPT   = '$'
+HOSTNAME = '%m'
+GIT      = '\$vcs_info_msg_0_'
+
+# Regular Colors
+Black='black'        # Black
+Red='red'          # Red
+Green='green'        # Green
+Yellow='yellow'       # Yellow
+Blue='blue'         # Blue
+Purple='magenta'       # Purple
+Cyan='cyan'         # Cyan
+White='white'        # White
+
+def color (color, value)
+  "%F{#{color}}#{value}%f"
+end
+
+
+def bold (value)
+  "%B#{value}%b"
+end
+
+values = []
+values << '['
+values << bold(color(Purple, [USERNAME,'@',HOSTNAME].join('')))
+values << ' '
+values << bold(color(Blue, RELATIVE))
+values << ' '
+values << bold(color(Green, ["'",GIT,"'"].join('')))
+values << ']'
+values << PROMPT
+values << ' '
+puts "export PS1='#{values.join("")}'"
